@@ -21,5 +21,7 @@ end12 = "r"
 
 # watch end = ' ' at the end. try removing it to see what happens
 # adding end = '\n' will start a new line
+# the end = ' ' is to add a space to the end of the word before the next
+# you can add text in between the ' ' to add it to the other text that its taking
 print(end1 + end2 + end3 + end4 + end5 + end6, end = '\n\n@')
 print(end7 + end8 + end9 + end10 + end11 + end12)

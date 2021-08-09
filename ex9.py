@@ -1,9 +1,9 @@
 # Here's some strange stuff, remember type it exactly.
 
 days = "Mon Tue Wed Thu Fri Sat Sun"
-months = "Jan\nFeb\nMar\nApr\nMay\nJun\nJul\nAug"
+months = "\nJan\nFeb\nMar\nApr\nMay\nJun\nJul\nAug"
 # the \n before a strings puts it on a new line
-print("Here are the days: ", days)
+print(f"Here are the days:\n{days} ")
 print("Here are the months: ", months)
 
 print("""
