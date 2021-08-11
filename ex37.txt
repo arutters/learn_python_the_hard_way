@@ -1,0 +1,133 @@
+KEY WORDS:
+
+and - logical and. 
+    True and False == False
+as - part of the with-as statement
+    with X as Y: pass
+assert - Assert(ensure) that something is True 
+    assert False, "Error!"
+break - Stop this loop right now
+    while True: break
+class - define a class
+    class Person(object)    
+continue - Don't process more of the loop, do it again
+    while True: continue
+def - define a function
+    def X(): pass
+del - delete from dictionary
+    del X[Y]
+elif - else if condition
+    if: X; elif: Y; else: J
+else - else condition
+        if: X; elif: Y; else: J
+except - if an exception happens, do this   
+    except ValueError as e: print(e)
+exec - Run a string as python
+    exec 'print("hello")'
+finally - exceptions or not, finally do this no matter what
+    finally: pass
+for - loop over a collection of things
+    for X in Y: pass
+from - importing specific parts of a module
+    from x import Y
+global - declare that you want a global variable
+    global X
+if - if condition 
+        if: X; elif: Y; else: J
+import = import a module into this one to use
+    import os
+in - Part of for-loops. Also a test of X in Y
+    for X in Y: pass   also   1 in [1] == True
+is - like == to test equality
+    1 is 1 == True
+lambda - create a short anonymous function  
+    s - lambda y: y ** y; s(3)
+not - logical not   
+    not True == False
+or - logical or
+    True or False == True
+pass - this block is empty
+    def empty(): pass
+print - print this string
+    print("Text goes here")
+raise - raise an exception for when things go wrong
+    raise ValueError("No")
+return - Exit the function with a return Value
+    def X(): return y
+try - try this block and if exception, go to except.
+    try: pass
+while - while-loop
+    while x: pass
+with - with an expression as a variable do.
+    with x as y: pass
+yield - pause here and return to caller
+    def x(): yield y; x().next()
+    
+
+DATA TYPES:
+
+True - True boolean Value
+    True or False == True
+False - False boolean value. 
+    True and False == False 
+None - represents 'nothing' or 'no value'
+    x = None
+bytes - stores bytes, maybe of text, PNG, file, etc.
+    x = b"hello"
+strings - stores textual information
+    x = "hello"
+numbers - stores integers
+    i = 100
+floats - stores decimals
+    i = 10.389
+lists - stores a list of things 
+    j = [1, 2, 3, 4]
+dicts - stores a key=value mapping of things    
+    e = {'x': 1, 'y': 2}
+
+
+STRING ESCAPE SEQUENCES:
+
+\\  Backslash
+\'  Single-quote
+\"  Double-quote
+\a  Bell
+\b  Backspace
+\f  Formfeed
+\n  Newline
+\r  Carriage
+\t  Tab
+\v  Vertical Tab
+
+
+OPERATORS:
+
++ Addition  2 + 4 == 6
+- Subtraction 2 - 2 == 0
+* Multiplication 2 * 4 == 8
+** Power of 2 ** 4 == 16
+/ Division 8 / 2 == 4
+// Floor Division 2 // 4 == 0 
+% String interpolate or modulus  2 % 4 == 2
+< Less than  3 < 5
+> Greater than 5 > 3
+<= Less than or equal 
+>= Greater or equal 
+== Equal 
+!= Not equal
+() Parenthesis
+[] List Brackets
+{} Dict curly braces
+@ At (decorators) @classmethod
+, Comma
+: colon 
+. Dot
+= Assign Equal 
+; Semi colon
++= Add and assign 
+-= Subtract and assign
+*= Multiply and assign
+/= Divide and assign
+//= Floor divide and assign
+%= Modulus assign
+** Power and assign
