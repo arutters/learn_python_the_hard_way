@@ -4,7 +4,8 @@ states = {
     'Florida': 'FL',
     'California': 'CA',
     'New York': 'NY',
-    'Michigan': 'MI'
+    'Michigan': 'MI',
+    'Georgia': 'GA'
 }
 
 # create a basic set of states and some cities in them
@@ -17,6 +18,7 @@ cities = {
 # add some more cities
 cities['NY'] = 'New York'
 cities['OR'] = 'Portland'
+cities['GA'] = 'Atlanta'
 
 # print out some cities
 print('-' * 10)
@@ -27,6 +29,7 @@ print("OR State has: ", cities['OR'])
 print('-' * 10)
 print("Michigan has: ", cities[states['Michigan']])
 print("Florida has: ", cities[states['Florida']])
+print("Georgia has: ", cities[states['Georgia']])
 
 # print every state abbreviation
 print('-' * 10)
@@ -54,3 +57,5 @@ if not state:
 # get a city with a default value
 city = cities.get('TX', 'Does Not Exist')
 print(f"The city for the state of 'TX' is {city}.")
+
+# Dictionaries cannot have order
