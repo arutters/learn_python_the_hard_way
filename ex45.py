@@ -2,7 +2,7 @@ from sys import exit
 from random import randint
 from textwrap import dedent
 
-
+# If reading this please dont judge this ugly rough draft
 
 class Scene(object):
 
@@ -28,7 +28,7 @@ class Walk(object):
 class Death(Scene):
 
     quips = [ "You should've tried harder.",
-            "You died. You kind of suck pretty badly at this.",
+            "You died. Job not well done.",
             "You died, and you'll be lucky if rescuers ever find your body."
     ]
 
@@ -109,7 +109,7 @@ class HundredFeetDown(Scene):
 class TheInjury(Scene):
 
     def enter(self):
-        print("""As you keep moving forward through the mysterious cave, 
+        print("""\tAs you keep moving forward through the mysterious cave, 
             you find that the path seems to become super uneven. Thinking
             nothing of it, you keep trecking along.\n\t
             Suddenly in a small mistep, you fall hard on the ground. 
@@ -121,24 +121,112 @@ class TheInjury(Scene):
             supposed to be in-causing even more pain-and wrap it with the torn 
             shirt of one of your buddies.\n\t
             Knowing that you are unable to walk, you see them huddled just out 
-            of earshot, speaking in hushed whispers.\n\tWhen 
-            kdfkfdkd""")
+            of earshot, speaking in hushed whispers.\n\tSuddenly you notice how
+            silent everyone has become. They start to make their way back to you
+            and tell you that they think their only change of survival will be
+            if they leave you behind, and keep moving forward. They justify by
+            saying that if they get out, they will get help to come back for you.\n\t
+            In a state of shock you just say, 'OK'.\n\t As they start to walk away, you 
+            figure you have to make a gameplan for yourself to get out. 
+            \n\t Once you muster up the strength, do you start to crawl forward, or
+            just sit there and hope they actually get out and send for help?
+            """)
+        action = input("* crawl\n* wait\n> ")
+
+        if action == "crawl":
+            return 'moving_forward_separated'
+        elif action == "wait":
+            print("You sit and wait for what feels like an eternity, and die of starvation and dehydration.")
+            return 'death'
+        else:
+            return 'death'
 
 
 class MovingForwardSeparated(Scene):
 
     def enter(self):
-        pass
+        print("""
+            As you crawl across the jagged rocks and uneven surface, 
+            your hands start to become rough and bloodied. The combination
+            of your hands, leg, and your thirst becomes almost too much
+            for you to handle. 
+            You stop to take a little break and rest against the side of 
+            cave. When you lean against it, you feel your clothes becoming 
+            wet. It seems like water is lining the cave. You get the idea
+            to lick the 'water' off of the walls to quench your thirst.\n
+            Should you do it?
+            """)
+        action = input("* yes\n* no\n> ")
+
+        if action == "yes":
+            return 'water_insanity'
+        elif action == "no":
+            print("As you sit there your eyes become heavy and everything goes to black")
+            return 'death'
+        else: 
+            return 'death'
 
 class WaterInsanity(Scene):
 
     def enter(self):
-        pass
+        print("""
+            As you are licking as much of the water off of the
+            wall, it actually is starting to make you feel better.
+            As you start to regain a little bit of strength, you 
+            notice that there are actually two paths ahead of you.
+            It appears that there is light at the end of one of them.
+            \nDo you choose the path with the light, or the other one? 
+            """)
+
+        action = input("* the light\n* the other way\n> ")
+
+        if action == "the light":
+            print("""You feel determination and adreline soaring through your
+            body as you move closer to the light. Soon you see that it isn't 
+            in fact the exit, but what seems like a bioluminescent algae. As 
+            you notice this, your vision starts to become blurred, and soon
+            everything turns to black. """)
+            return 'death'
+        elif action == "the other way":
+            return 'escape'
+        else:
+            return 'death'
 
 class Escape(Scene):
 
     def enter(self):
-        pass
+        print("""After what feels like miles of crawling on the 
+            rocky floor, you feel an unexpected slight breeze 
+            crawl across your skin. That's when you look up and start to see
+            the moonlight coming in from an opening just big enough for
+            you to squeeze through. You ready the flare that you've kept on
+            you the entire time, and as you are about to pull the trigger,
+            you hear your friends calling for help from behind you in the cave.
+            Do you try to go back and help them even though you may not make
+            it, or do you shoot the flare and wait for help?
+            """)
+        action = input("* shoot flare\n* friends\n> ")
+
+        if action == "shoot flare":
+            print("""You ignore their cries for help and shoot the flare.
+                You wait and wait and wait some more. Finally, you see
+                a helicopter above you.\nYou have been rescued and live to 
+                see another day.""")
+            return 'finished'
+            
+        elif action == "friends":
+            print("""You try your best to make your way back into the cave to
+                help your friends, but it's no use. It takes up what little
+                energy you had left, and you bleed out before you are able to
+                get to them.""")
+            return 'death'
+        else:
+            return 'death'
+
+class Finished(Scene):
+    def enter(self):
+        print("Congrats, you won!")
+
 
 class Cave(object):
 
@@ -150,6 +238,7 @@ class Cave(object):
         'water_insanity': WaterInsanity(),
         'escape': Escape(),
         'death': Death(),
+        'finished': Finished(),
     }
     
     def __init__(self, start_scene):
