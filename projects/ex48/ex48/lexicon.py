@@ -1,7 +1,7 @@
 directions = ['north', 'south', 'east', 'west', 'down', 'up', 'left', 'right', 'back']
 verbs = ['go', 'stop', 'kill', 'eat']
 stop_words = ['the', 'in', 'of', 'from', 'at', 'it']
-nouns = ['door', 'bear', 'princess', 'cabinet']
+nouns = ['door', 'bear', 'chris', 'princess', 'cabinet']
 
 def scan(input):
     words = input.split()
@@ -9,13 +9,13 @@ def scan(input):
     sentence = []
 
     for word in words:
-        if word in directions:
+        if word.lower() in directions:
             operation = 'direction'
-        elif word in verbs:
+        elif word.lower() in verbs:
             operation = 'verb'
-        elif word in stop_words:
+        elif word.lower() in stop_words:
             operation = 'stop'
-        elif word in nouns:
+        elif word.lower() in nouns:
             operation = 'noun'
         elif convert_number(word):
             operation = 'number'
@@ -32,3 +32,9 @@ def convert_number(word):
         return int(word)
     except ValueError:
         return None
+
+# another way to 'convert_number' is to use the below instead of def a new function. This is used in the longer "spelled out" code
+    # for word in words:
+        # if word.isdigit():
+        #     word = int(word)
+        #     sentence.append(('number', word))
