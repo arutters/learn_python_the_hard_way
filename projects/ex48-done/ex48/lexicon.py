@@ -1,7 +1,7 @@
 directions = ['north', 'south', 'east', 'west', 'down', 'up', 'left', 'right', 'back']
-verbs = ['go', 'stop', 'kill', 'eat']
-stop_words = ['the', 'in', 'of', 'from', 'at', 'it']
-nouns = ['door', 'bear', 'chris', 'princess', 'cabinet']
+verbs = ['go', 'stop', 'kill', 'eat', 'walk']
+stop_words = ['the', 'in', 'of', 'from', 'at', 'it', 'is']
+nouns = ['door', 'bear', 'player', 'princess', 'cabinet']
 
 def scan(input):
     words = input.split()
