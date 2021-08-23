@@ -3,6 +3,9 @@
        <title>Gothons of Planet Percal #25</title>
     </head>
 <body>
+{% extends "layout.html" %}
+
+{% block content %}
 
 {% if greeting %}
     I just wanted to say
@@ -10,6 +13,8 @@
 {% else %}    
     <em>Hello</em>, world!
 {% endif %}
+
+{% endblock %}
 
 </body>
 </html>

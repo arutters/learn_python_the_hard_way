@@ -1,0 +1,33 @@
+
+<html>
+    <head>
+        <title>Sample Web Form</title>
+    </head>
+<body>
+    
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1>Fill Out This Form</h1>
+
+<form action="/hello" method="POST">
+    A Greeting: <input type="text" name="greet"
+    <br/>
+    Your Name: <input type="text" name="name"
+    <br/>
+    <input type="submit">
+</form>
+
+<form>
+    <label for="avatar">Choose a profile picture:</label>
+
+    <input type="file"
+        id="avatar" name="avatar"
+        accept="image/png, image/jpeg">
+
+</form>
+{% endblock %}
+
+</body>
+</html>
